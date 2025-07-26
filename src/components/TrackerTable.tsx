@@ -12,7 +12,18 @@ export default function TrackerTable({ type, items, onDelete }: { type: string; 
     }
   };
 
-  const headers = renderHeaders();
+const renderHeaders = (): string[] => {
+  switch (type) {
+    case "patients":
+      return ["Name", "Age", "Gender"];
+    case "medicines":
+      return ["Name", "Dosage", "Stock"];
+    case "appointments":
+      return ["Name", "Date", "Time"];
+    default:
+      return [];
+  }
+};
 
   return (
     <table className="w-full table-auto border text-sm">
