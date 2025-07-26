@@ -26,23 +26,29 @@ const renderHeaders = (): string[] => {
 };
 
   return (
-    <table className="w-full table-auto border text-sm">
-      <thead>
-        <tr>
-          {headers.map((h, i) => <th key={i} className="border p-2 bg-gray-100">{h}</th>)}
-          <th className="border p-2 bg-gray-100">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((item, index) => (
-          <tr key={index}>
-            {headers.map((h, i) => <td key={i} className="border p-2">{item[h.toLowerCase()]}</td>)}
-            <td className="border p-2 text-center">
-              <Button size="sm" variant="destructive" onClick={() => onDelete(index)}>Delete</Button>
-            </td>
-          </tr>
+    {headers.length > 0 && (
+  <table className="w-full table-auto border text-sm">
+    <thead>
+      <tr>
+        {headers.map((h, i) => (
+          <th key={i} className="border p-2 bg-gray-100">{h}</th>
         ))}
-      </tbody>
-    </table>
+        <th className="border p-2 bg-gray-100">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {items.map((item, index) => (
+        <tr key={index}>
+          {headers.map((h, i) => (
+            <td key={i} className="border p-2">{item[h.toLowerCase()]}</td>
+          ))}
+          <td className="border p-2 text-center">
+            <Button size="sm" variant="destructive" onClick={() => onDelete(index)}>Delete</Button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
   );
 }
