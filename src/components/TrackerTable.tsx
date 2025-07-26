@@ -49,6 +49,7 @@ const renderHeaders = (): string[] => {
       ))}
     </tbody>
   </table>
-)}
-  );
+)};
+
+    )
 }
