@@ -1,4 +1,4 @@
-# Clinic Tracker App (Weekly Challenge #56) - ONLINE COURSE
+# Clinic Tracker App (Weekly Challenge #56) - ONLINE CHALLENGE
 
 ## 💼 Client Story
 Client (clinic CEO) requested a simple app to track basic items like Patients, Appointments, or Medicines.
